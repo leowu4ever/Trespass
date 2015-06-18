@@ -15,15 +15,13 @@ int p1 = 5;          // pressure pad 1
 int p2 = 6;          // pressure pad 2
 int p3 = 7;          // pressure pad 1
 int stp = 8;         // step of stepper motor
-int dir = 9;         // direction of stepper motor
+int dir = 9;         // direction of stepper motor probably don't need
 
 int po1 = A0;         // potentiometer 1
 int po2 = A1;         // potentiometer 2
 int po3 = A2;         // potentiometer 3
 
 bool emerStop;       // emergency stop
-
-
 
 void setup()
 {
@@ -32,7 +30,9 @@ void setup()
 void loop()
 {
   // respond to processing
-  // emergency cut off 
+  // emergency cut off
+  driveMotor(5);
+
 }
 
 void initDigiPin()
@@ -64,22 +64,29 @@ void setOff(int pin)
   digitalWrite(pin, LOW);
 }
 
-// control sequence need to be clear up 
-// stepper motor runs in a while loop 
-void driveMotor(int speed) 
+// control sequence need to be clear up
+// stepper motor runs in a while loop
+void driveMotor(int time)
 {
-  
+  if (!emerStop)
+  {
+    digitalWrite(stp, HIGH);
+    delay(time);
+    digitalWrite(stp, LOW);
+  }
 }
 
-void stopMotor() 
+void stopMotor()
 {
-
-}  
+  emerStop = true;
+}
 
 // return the rotation of a joint
 int getJointRot (int po)
 {
   return map(analogRead(po), 0, 1023, 0, 360);
 }
+
+// potentiometer functions
 
 
