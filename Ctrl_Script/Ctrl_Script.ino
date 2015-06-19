@@ -2,15 +2,15 @@
   Ctrl_Script
   Control one dance robot
   1 clutches & 3 brakes & 3 pressure pads & 3 potentiometers & stepper motor
- 
-  Area: 
+
+  Area:
   robot - zone 1 - zone 2 - zone 3 - zone 4
 
-  Working logic: 
+  Working logic:
   1. motor constant speed
   2. disengage clutch when zone < 4
   ------------ TO BE CONTINUED ------------
-  
+
   by Leo Wu (King's College London)
  */
 
@@ -32,9 +32,11 @@ int po3 = A2;                  // potentiometer on distal joint
 
 bool emerStop;                 // emergency stop
 int delayTime = 5;             /// delay between each step
+String serialData;
 
 void setup()
 {
+  Serial.begin(9600);
   initPins();
 }
 void loop()
@@ -43,6 +45,22 @@ void loop()
   // emergency cut off
   driveMotor(delayTime);
   Serial.print(getJointAgl(po1));
+
+  // serial communication
+  // if we get a valid byte, read analog ins:
+  if (Serial.available() > 0) {
+    // get incoming byte:
+    serialData = Serial.readString();
+    Serial.print(serialData);
+  }
+  
+  // serial.print to send data to processing
+  
+  // check incoming byte and execute corresponding command 
+  if (serialData == "R") 
+  {
+    
+  }
 }
 
 // initialise pin assign

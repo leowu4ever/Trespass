@@ -7,11 +7,9 @@
 
 import g4p_controls.*;
 import processing.serial.*;
+import oscP5.*;
+import netP5.*;
 
-/* declare UI component here
- checkbox for 1 clutches & 3 brakes & 3 pressure pads 
- & 3 potentiometers & stepper motor
- */
 
 Serial myPort;       
 String value;        
@@ -29,6 +27,13 @@ void setup()
   print(Serial.list());  // print all ports
   myPort = new Serial(this, Serial.list()[2], 9600);
   myPort.bufferUntil('\n');
+
+  // osc
+  // start oscP5, telling it to listen for incoming messages at port 5001 */
+  oscP5 = new OscP5(this, 5001);
+
+  // set the remote location to be the localhost on port 5001
+  myRemoteLocation = new NetAddress("127.0.0.1", 5001);
 }
 
 void draw() 
@@ -37,8 +42,12 @@ void draw()
   {
     println(value);     
     value = trim(value);  // get rid of whitespace
+    // need to arrange data and update array 
+    // updateSenFloList();
+    // parseData(value);
   }
 }
+
 
 void serialEvent (Serial myPort) 
 {
