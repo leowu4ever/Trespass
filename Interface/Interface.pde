@@ -10,7 +10,6 @@ import processing.serial.*;
 import oscP5.*;
 import netP5.*;
 
-
 Serial myPort;       
 String value;        
 int width = 600;
@@ -19,7 +18,10 @@ int height = 400;
 void setup() 
 {
   size(width, height, P2D);  
-  fill(255);
+  smooth();
+    noStroke();
+
+  fill(255,255,255);
   noStroke();
   rect(boxWidth, 0, width, height);
 
@@ -47,7 +49,6 @@ void draw()
     // parseData(value);
   }
 }
-
 
 void serialEvent (Serial myPort) 
 {

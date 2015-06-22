@@ -10,22 +10,37 @@
  & 3 potentiometers & stepper motor
  */
 
-GCheckbox c1, b1, b2, b3, p1, p2, p3;
-int boxWidth = 50;
+GCheckbox c1, b1, b2, b3, pp1, pp2, pp3, led1, led2, led3;
+GLabel po1, po2, po3;
+GKnob kb1, kb2;
+
+
+int boxWidth = 90;
 int boxHeight = 20;
 void initGUI()
 {
-  createCBs();
+  createComps();
 }
 
-void createCBs ()
+void createComps ()
 {
-  c1 = new GCheckbox (this, 0, boxHeight * 0, boxWidth, boxHeight, "c1");  
-  b1 = new GCheckbox (this, 0, boxHeight * 1, boxWidth, boxHeight, "b1");  
-  b2 = new GCheckbox (this, 0, boxHeight * 2, boxWidth, boxHeight, "b2");  
-  b3 = new GCheckbox (this, 0, boxHeight * 3, boxWidth, boxHeight, "b3");  
-  p1 = new GCheckbox (this, 0, boxHeight * 4, boxWidth, boxHeight, "p1");  
-  p2 = new GCheckbox (this, 0, boxHeight * 5, boxWidth, boxHeight, "p2");  
-  p3 = new GCheckbox (this, 0, boxHeight * 6, boxWidth, boxHeight, "p3");
+  c1 = new GCheckbox (this, 0, boxHeight * 0, boxWidth, boxHeight, "Clutch");  
+  b1 = new GCheckbox (this, 0, boxHeight * 1, boxWidth, boxHeight, "Brake1");  
+  b2 = new GCheckbox (this, 0, boxHeight * 2, boxWidth, boxHeight, "Brake2");  
+  b3 = new GCheckbox (this, 0, boxHeight * 3, boxWidth, boxHeight, "Brake3");  
+  pp1 = new GCheckbox (this, 0, boxHeight * 4, boxWidth, boxHeight, "pp1");  
+  pp2 = new GCheckbox (this, 0, boxHeight * 5, boxWidth, boxHeight, "pp2");  
+  pp3 = new GCheckbox (this, 0, boxHeight * 6, boxWidth, boxHeight, "pp3");
+  led1 = new GCheckbox (this, 0, boxHeight * 7, boxWidth, boxHeight, "LED1");  
+  led2 = new GCheckbox (this, 0, boxHeight * 8, boxWidth, boxHeight, "LED2");  
+  led3 = new GCheckbox (this, 0, boxHeight * 9, boxWidth, boxHeight, "LED3");
+  po1 = new GLabel (this, 0, boxHeight * 10, boxWidth, boxHeight, "Rotation 1: ...");
+  po2 = new GLabel (this, 0, boxHeight * 11, boxWidth, boxHeight, "Rotation 2: ...");
+  po3 = new GLabel (this, 0, boxHeight * 12, boxWidth, boxHeight, "Rotation 3: ...");
+  kb1 = new GKnob(this, (width - boxWidth) / 2, height / 2, 180, 180, 1f);
+  kb1.setTurnRange(0, 360);
+  
+  kb1.setTurnMode(G4P.CTRL_ANGULAR);
+
 }
 
