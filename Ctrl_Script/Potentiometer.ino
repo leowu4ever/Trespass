@@ -6,7 +6,7 @@ int getJointAgl(int po)
 
 void updateAgls()
 {
-  states[13] = String(getJointAgl(po1));
-  //states[14] = String(getJointAgl(po2));
-  //states[15] = String(getJointAgl(po3));
+  states[14] = String(getJointAgl(po1));
+  //states[15] = String(getJointAgl(po2));
+  //states[16] = String(getJointAgl(po3));
 }

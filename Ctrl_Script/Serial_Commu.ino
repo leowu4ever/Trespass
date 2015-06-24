@@ -4,7 +4,7 @@
 
 void sendStates()
 {
-  for (int a = 3; a < stateLen; a++)
+  for (int a = 2; a < stateLen; a++)
   {
     if (a != stateLen - 1)
     {

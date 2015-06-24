@@ -5,3 +5,10 @@
 
 // sending different commands to robot 
 
+void serialEvent (Serial myPort) 
+{
+  // start to read the data when it meets new line mark
+  value = myPort.readStringUntil('\n');
+}
+
+

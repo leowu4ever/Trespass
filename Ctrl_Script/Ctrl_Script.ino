@@ -53,6 +53,7 @@ void setup()
   Serial.begin(9600);
   pinAssign();
 }
+
 void loop()
 {
   updateAgls();
@@ -78,8 +79,3 @@ void pinAssign()
   pinMode(led3, OUTPUT);
 }
 
-// init pin
-void initPins()
-{
-
-}

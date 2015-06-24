@@ -18,7 +18,7 @@ int boxHeight = 20;
 void initGUI()
 {
   createComps();
-  drawSim();
+  //drawSim();
 }
 
 void createComps ()

@@ -47,6 +47,5 @@ void setMotorSpeed(int speed)
     delayTime = 3;
   }
   states[stp] = String(speed);
-
 }
 
