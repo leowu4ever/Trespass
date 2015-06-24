@@ -10,34 +10,25 @@ import processing.serial.*;
 import oscP5.*;
 import netP5.*;
 
-Serial myPort;       
-String value;        
+String value;   
+boolean SerialRunin;
 int width = 600;
 int height = 400; 
 
 void setup() 
 {
   size(width, height, P2D);  
-  smooth();
-  fill(255, 255, 255);
-  noStroke();
-  rect(boxWidth, 0, width, height);
-
+  background(255);
   initGUI();
-  print(Serial.list());  // print all ports
+  testPort();
   myPort = new Serial(this, Serial.list()[2], 9600);
-  myPort.bufferUntil('\n');
 
-  // osc
-  // start oscP5, telling it to listen for incoming messages at port 5001 */
-  oscP5 = new OscP5(this, 5001);
-
-  // set the remote location to be the localhost on port 5001
-  myRemoteLocation = new NetAddress("127.0.0.1", 5001);
+  myPort.bufferUntil('@');
 }
 
 void draw() 
 {
+  background(255);
   if (value != null) 
   {
     println(value);     
@@ -45,6 +36,8 @@ void draw()
     // need to arrange data and update array 
     // updateSenFloList();
     // parseData(value);
+    updateUI();
   }
 }
+
 

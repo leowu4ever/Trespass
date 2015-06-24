@@ -17,7 +17,7 @@
 // digital pin assignment
 int stp = 2;                   // step pin of stepper motor
 int dir = 3;
-int c = 4;                    // clutch on base
+int c1 = 4;                    // clutch on base
 int b1 = 5;                    // brake on base
 int b2 = 6;                    // brake on mid joint
 int b3 = 7;                    // brake on distal joint
@@ -58,6 +58,26 @@ void loop()
 {
   updateAgls();
   sendStates();
+  
+  // serial communication
+  // if we get a valid byte, read analog ins:
+  if (Serial.available() > 0) {
+    // get incoming byte:
+    serialData = Serial.readString();
+    Serial.print(serialData);
+  }
+
+  // serial.print to send data to processing
+
+  // check incoming byte and execute corresponding command
+  if (serialData == "C1ON")
+  {
+    setComOn(c1);
+  }
+   if (serialData == "C1OFF")
+  {
+    setComOff(c1);
+  }
 }
 
 // pin assignment
@@ -70,7 +90,7 @@ void pinAssign()
   // set stepper motor, clutch, brake and led pins as output
   pinMode(stp, OUTPUT);
   pinMode(dir, OUTPUT);
-  pinMode(c, OUTPUT);
+  pinMode(c1, OUTPUT);
   pinMode(b1, OUTPUT);
   pinMode(b2, OUTPUT);
   pinMode(b3, OUTPUT);

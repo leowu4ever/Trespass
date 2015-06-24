@@ -22,9 +22,16 @@ void stopMotor()
 }
 
 // change motor direction
-void setMotorDir()
+void setMotorDir(int dir)
 {
-  setOn(dir);
+  if (dir == 0)
+  {
+    setComOn(dir);
+  }
+  else if (dir == 1)
+  {
+    setComOff(dir);
+  }
 }
 
 /*
