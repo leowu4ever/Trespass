@@ -19,18 +19,18 @@ void sendStates()
   }
 }
 
-  //  // serial communication
-  //  // if we get a valid byte, read analog ins:
-  //  if (Serial.available() > 0) {
-  //    // get incoming byte:
-  //    serialData = Serial.readString();
-  //    Serial.print(serialData);
-  //  }
-  //
-  //  // serial.print to send data to processing
-  //
-  //  // check incoming byte and execute corresponding command
-  //  if (serialData == "R")
-  //  {
-  //
-  //  }
+//  // serial communication
+//  // if we get a valid byte, read analog ins:
+//  if (Serial.available() > 0) {
+//    // get incoming byte:
+//    serialData = Serial.readString();
+//    Serial.print(serialData);
+//  }
+//
+//  // serial.print to send data to processing
+//
+//  // check incoming byte and execute corresponding command
+//  if (serialData == "R")
+//  {
+//
+//  }

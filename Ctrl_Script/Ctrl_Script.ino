@@ -31,14 +31,21 @@ int po1 = A0;                  // potentiometer on base
 int po2 = A1;                  // potentiometer on mid joint
 int po3 = A2;                  // potentiometer on distal joint
 
+bool motorStop = true;                 // emergency stop
+int delayTime = 10;             // delay between each step
+
 // c1, b1-b3, pp1-pp3, led1-led3, po1-po3 at initial point
 // clutch engaged, brake off, pp off, led on, po 0 degree
-int stateLen = 16;
-String states[] = {"_", "_", "_", String(stateLen), 
-        "0", "0", "0", "0", "0", "0", "0", "1", "1", "1", "0", "0", "0"};
+int stateLen = 17;
+String states[] = {"_", "_",                // match content with pin number 0-1
+                   "3", "0",                // speed, direction 2-3
+                   "0",                     // clutch 4
+                   "0", "0", "0",           // brake 5-7
+                   "0", "0", "0",           // pressure pad 8-10
+                   "1", "1", "1",           // LED 11-13
+                   "0", "0", "0"            // Angle 14-16
+                  };
 
-bool emerStop;                 // emergency stop
-int delayTime = 8;             /// d    elay between each step
 String serialData;
 
 void setup()
