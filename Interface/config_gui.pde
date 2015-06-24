@@ -12,14 +12,13 @@
 
 GCheckbox c1, b1, b2, b3, pp1, pp2, pp3, led1, led2, led3;
 GLabel po1, po2, po3;
-GKnob kb1, kb2;
-
 
 int boxWidth = 90;
 int boxHeight = 20;
 void initGUI()
 {
   createComps();
+  drawSim();
 }
 
 void createComps ()
@@ -37,10 +36,5 @@ void createComps ()
   po1 = new GLabel (this, 0, boxHeight * 10, boxWidth, boxHeight, "Rotation 1: ...");
   po2 = new GLabel (this, 0, boxHeight * 11, boxWidth, boxHeight, "Rotation 2: ...");
   po3 = new GLabel (this, 0, boxHeight * 12, boxWidth, boxHeight, "Rotation 3: ...");
-  kb1 = new GKnob(this, (width - boxWidth) / 2, height / 2, 180, 180, 1f);
-  kb1.setTurnRange(0, 360);
-  
-  kb1.setTurnMode(G4P.CTRL_ANGULAR);
-
 }
 

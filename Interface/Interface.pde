@@ -19,9 +19,7 @@ void setup()
 {
   size(width, height, P2D);  
   smooth();
-    noStroke();
-
-  fill(255,255,255);
+  fill(255, 255, 255);
   noStroke();
   rect(boxWidth, 0, width, height);
 
