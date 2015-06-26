@@ -38,15 +38,19 @@ int delayTime = 10;             // delay between each step
 // clutch engaged, brake off, pp off, led on, po 0 degree
 int stateLen = 17;
 String states[] = {"_", "_",                // match content with pin number 0-1
-                   "3", "0",                // speed, direction 2-3
+                   "1", "0",                // speed, direction 2-3
                    "0",                     // clutch 4
                    "0", "0", "0",           // brake 5-7
                    "0", "0", "0",           // pressure pad 8-10
-                   "1", "1", "1",           // LED 11-13
+                   "0", "0", "0",           // LED 11-13
                    "0", "0", "0"            // Angle 14-16
                   };
 
 String serialData;
+
+int HIGH_SPEED = 3;          // delay = 3
+int MEDIUM_SPEED = 6;
+int LOW_SPEED = 10;
 
 void setup()
 {
@@ -58,26 +62,7 @@ void loop()
 {
   updateAgls();
   sendStates();
-  
-  // serial communication
-  // if we get a valid byte, read analog ins:
-  if (Serial.available() > 0) {
-    // get incoming byte:
-    serialData = Serial.readString();
-    Serial.print(serialData);
-  }
-
-  // serial.print to send data to processing
-
-  // check incoming byte and execute corresponding command
-  if (serialData == "C1ON")
-  {
-    setComOn(c1);
-  }
-   if (serialData == "C1OFF")
-  {
-    setComOff(c1);
-  }
+  serialResponse();
 }
 
 // pin assignment

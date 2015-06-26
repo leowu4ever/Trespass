@@ -6,6 +6,11 @@
 // sending different commands to robot 
 Serial myPort;       
 
+void initPort()
+{
+  myPort = new Serial(this, Serial.list()[2], 9600);
+  myPort.bufferUntil('\n');
+}
 void serialEvent(Serial myPort) 
 {
   // start to read the data when it meets new line mark
@@ -17,16 +22,7 @@ void testPort()
   print(Serial.list());  // print all ports
 }
 
-void startSerial()
+void parseValue(String value)
 {
-  myPort.write("START");
-  println("serial start");
 }
-
-void stopSerial() 
-{
-  myPort.write("STOP");
-  println("serial stop");
-}
-
 

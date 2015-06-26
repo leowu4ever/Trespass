@@ -1,9 +1,11 @@
+
 // run the motor one step
 void driveMotor(int delayTime)
 {
   if (!motorStop)                        // safety check
   {
     digitalWrite(stp, HIGH);
+    
     delay(delayTime);
     digitalWrite(stp, LOW);
   }
@@ -13,46 +15,46 @@ void driveMotor(int delayTime)
 void startMotor()
 {
   motorStop = false;
+      states[stp] = "1";
+
 }
 
 // stop running the motor
 void stopMotor()
 {
   motorStop = true;
+      states[stp] = "0";
+
 }
 
 // change motor direction
-void setMotorDir(int dir)
+void setMotorDir(int direction)
 {
-  if (dir == 0)
+  if (direction == 0)
   {
     setComOn(dir);
   }
-  else if (dir == 1)
+  else if (direction == 1)
   {
     setComOff(dir);
   }
 }
 
-/*
-  set motor speed
-  delay 10, 6, 3
-  speed  1, 2, 3
- */
+// set motor speed
 void setMotorSpeed(int speed)
 {
-  if (speed == 1)
+  delayTime = speed;
+  if (speed == HIGH_SPEED)
   {
-    delayTime = 10;
-  }
-  else if (speed == 2)
+    states[stp] = "3";
+  } else if (speed == MEDIUM_SPEED)
   {
-    delayTime = 6;
+    states[stp] = "2";
+
   }
-  else if (speed == 3)
+  else if (speed == LOW_SPEED)
   {
-    delayTime = 3;
+    states[stp] = "1";
   }
-  states[stp] = String(speed);
 }
 

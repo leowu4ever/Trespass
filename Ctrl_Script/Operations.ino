@@ -10,5 +10,6 @@ void setComOn(int pin)
 {
   digitalWrite(pin, HIGH);
   states[pin] = "1";
+  
 }
 

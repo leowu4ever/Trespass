@@ -1,28 +1,48 @@
-void setMotorSpeed(int speed)
+// start the motor
+void startMotor()
 {
-  if (speed == 1) 
-  {
-    myPort.write("SPEED1");
-  } else if (speed == 2) 
-  {
-    myPort.write("SPEED2");
-  } else if (speed == 3) 
-  {
-    myPort.write("SPEED3");
-  }
+  myPort.write("START");
+  action.setText("Motor: start");
 }
 
-void setMotorDir(int dir)
+// stop the motor
+void stopMotor()
+{  
+  myPort.write("STOP");
+    action.setText("Motor: stop");
+
+}
+
+// ajdust motor speed
+void setMotorSpeed(String speed)
 {
-  if (dir == 0)
+  if (speed == "High") 
   {
+    myPort.write("HIGH");
+  } else if (speed == "Medium") 
+  {
+    myPort.write("MEDIUM");
+  } else if (speed == "Low") 
+  {
+    myPort.write("LOW");
+  }
+  action.setText("Speed: " + speed);
+}
+
+// change motor direction
+void setMotorDir (String dir)
+{
+  if (dir == "Direction 0") 
+  {  
     myPort.write("DIR0");
-  } else if (dir == 1)
+  } else if (dir == "Direction 1") 
   {
     myPort.write("DIR1");
   }
+  action.setText("Direction: " + dir);
 }
 
+// set a component on 
 void setComOn (String com) 
 {
   if (com == "c1")
@@ -48,7 +68,10 @@ void setComOn (String com)
     myPort.write("LED3ON");
   }
   println(com + " ON");
+  action.setText(com + " ON");
 }
+
+// set a component off
 void setComOff (String com) 
 {
   if (com == "c1")
@@ -74,5 +97,6 @@ void setComOff (String com)
     myPort.write("LED3OFF");
   }
   println(com + " OFF");
+  action.setText(com + " OFF");
 }
 

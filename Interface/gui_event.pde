@@ -1,12 +1,45 @@
+/*
+  Handling GUI events
+ */
 void updateUI()
 {
   states.setText(value);
-  // po1.setText("Joint 1: " + );
+}
+
+// button event listener
+void handleButtonEvents(GButton button, GEvent event) {
+  if (button == emerStop && event == GEvent.CLICKED)
+  {
+    myPort.write("EMERSTOP");    
+    println("EMERSTOP");
+  }
+}
+
+// drop list event listener
+void handleDropListEvents(GDropList list, GEvent event) { 
+  if (list == speed)
+  {
+    setMotorSpeed(list.getSelectedText());
+  }
+
+  if (list == dir)
+  {  
+    setMotorDir(list.getSelectedText());
+  }
 }
 
 void handleToggleControlEvents(GToggleControl option, GEvent event) 
 {
   boolean checked = option.isSelected();
+  //motor
+  if (option == motor && checked)
+  {
+    startMotor();
+  }
+  if (option == motor && !checked)
+  {
+    stopMotor();
+  }
   // c1 
   if (option == c1 && checked)
   {
@@ -69,15 +102,6 @@ void handleToggleControlEvents(GToggleControl option, GEvent event)
   if (option == led3 && !checked)
   {
     setComOff("led3");
-  }
-  //serial
-  if (option == connect && checked)
-  {
-    startSerial();
-  }
-  if (option == connect && !checked)
-  {
-    stopSerial();
   }
 }
 
