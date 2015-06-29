@@ -1,0 +1,45 @@
+/* trigger brake when joint towards to a certain position 
+   for pattern_based 
+
+   rotate 90 degree 
+   (0 HIGH_SPEED (delayTime = 1) - 90 LOW_SPEED (delayTime = 10))
+
+   using angle feedback from POT 
+   1. 
+
+
+
+
+  	0  -	-	-	-	-	-	-	-	-	-	-	-  90
+    START										      STOP
+
+   	| ------------------ prop -------------- |
+
+
+
+	 1. decrese speed at after X degree
+	 2. decrese for the whole duration 
+
+ */
+
+
+void TRIGGER_BRAKE_AFTER_DEGREE (float prop, int degree) // start to trigger brake at cur + degree * prop
+{
+	int cur = curAngle;
+	while (curAngle < cur + degree)						 // upper bound 
+	{
+		while(curAngle >= cur + degree * prop)			 // lower bound
+		{
+			for (int a = ?; a < 255; a++)
+			{
+				b.analogWrite(a);
+
+				// delay for some time 
+				// also depending on rotating amount 
+			}
+		}
+	}
+}
+
+
+

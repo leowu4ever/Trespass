@@ -5,7 +5,7 @@ void driveMotor(int delayTime)
   if (!motorStop)                        // safety check
   {
     digitalWrite(stp, HIGH);
-    
+
     delay(delayTime);
     digitalWrite(stp, LOW);
   }
@@ -15,7 +15,7 @@ void driveMotor(int delayTime)
 void startMotor()
 {
   motorStop = false;
-      states[stp] = "1";
+  states[stp] = "1";
 
 }
 
@@ -23,7 +23,7 @@ void startMotor()
 void stopMotor()
 {
   motorStop = true;
-      states[stp] = "0";
+  states[stp] = "0";
 
 }
 

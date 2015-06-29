@@ -30,15 +30,6 @@ void serialResponse()
   }
 
   // serial.print to send data to processing
-  // clutch
-  if (serialData == "C1ON")
-  {
-    setComOn(c1);
-  }
-  if (serialData == "C1OFF")
-  {
-    setComOff(c1);
-  }
   // brake1
   if (serialData == "B1ON")
   {
