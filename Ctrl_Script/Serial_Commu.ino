@@ -30,62 +30,75 @@ void serialResponse()
   }
 
   // serial.print to send data to processing
-  // brake1
-  if (serialData == "B1ON")
+  // B1 ON
+  if (serialData == "A")
   {
     setComOn(b1);
   }
-  if (serialData == "B1OFF")
+  // B1 OFF
+  if (serialData == "B")
   {
     setComOff(b1);
   }
-  // brake2
-  if (serialData == "B2ON")
+
+  // B2 ON
+  if (serialData == "C")
   {
     setComOn(b2);
   }
-  if (serialData == "B2OFF")
+
+  // B2 OFF
+  if (serialData == "D")
   {
     setComOff(b2);
   }
-  // brake3
-  if (serialData == "B3ON")
+
+  // B3 ON
+  if (serialData == "E")
   {
     setComOn(b3);
   }
-  if (serialData == "B3OFF")
+
+  // B3 OFF
+  if (serialData == "F")
   {
     setComOff(b3);
   }
-  // led1
-  if (serialData == "LED1ON")
+  // LED1ON
+  if (serialData == "G")
   {
     setComOn(led1);
   }
-  if (serialData == "LED1OFF")
+
+  // LED1OFF
+  if (serialData == "H")
   {
     setComOff(led1);
   }
-  // led2
-  if (serialData == "LED2ON")
+  // LED2ON
+  if (serialData == "I")
   {
     setComOn(led2);
   }
-  if (serialData == "LED2OFF")
+
+  // LED2OFF
+  if (serialData == "J")
   {
     setComOff(led2);
   }
-  // led3
-  if (serialData == "LED3ON")
+
+  // LED3ON
+  if (serialData == "K")
   {
     setComOn(led3);
   }
-  if (serialData == "LED3OFF")
+  // LED3OFF
+  if (serialData == "L")
   {
     setComOff(led3);
   }
   // EMER STOP
-  if (serialData == "EMERSTOP")
+  if (serialData == "M")
   {
     // NOT ONLY JUST STOP THE MOTOR
     // BRAKES
@@ -93,38 +106,43 @@ void serialResponse()
   }
 
   // start motor
-  if (serialData == "START")
+  if (serialData == "N")
   {
     startMotor();
   }
 
   // stop motor
-  if (serialData == "STOP")
+  if (serialData == "O")
   {
     stopMotor();
   }
 
-  // motor speed
-  if (serialData == "HIGH")
+  // high motor speed
+  if (serialData == "P")
   {
     setMotorSpeed(HIGH_SPEED);
   }
 
-  if (serialData == "MEDIUM")
+  // medium motor speed
+  if (serialData == "Q")
   {
     setMotorSpeed(MEDIUM_SPEED);
   }
-  if (serialData == "LOW")
+
+  // low motor speed
+  if (serialData == "R")
   {
     setMotorSpeed(LOW_SPEED);
   }
 
-  // motor direction
-  if (serialData == "DIR0")
+  // motor direction 0
+  if (serialData == "S")
   {
     setMotorDir(1);
   }
-  if (serialData == "DIR1")
+
+  // motor direction 1
+  if (serialData == "T")
   {
     setMotorDir(0);
   }
