@@ -16,8 +16,8 @@ void initPort()
 void serialEvent(Serial myPort) 
 {
   // start to read the data when it meets new line mark
-  value = myPort.readStringUntil('\n');
-  print (value);
+ // value = myPort.readStringUntil('\n');
+//  print (value);
 }
 
 void testPort()

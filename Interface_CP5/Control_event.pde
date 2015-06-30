@@ -107,9 +107,9 @@ void controlEvent(ControlEvent theEvent) {
     }
   }
 
-
   if (theEvent.isFrom(speed)) {
     println("speed " + speed.getValue() );
   }
+  
 }
 
