@@ -13,15 +13,15 @@ void setComOn(int pin)
 
 }
 
-void brakeAt(int degree) // getFirstAngle
-{
-  if (braking)
-  {
-    if (getJointAgl(po1) > degree * (1 - prop))
-    {
-        int a = map(getJointAgl(po1), 0, degree, 0, 255);
-        setComOn(led1);      
-    }
-  }
-}
+//void brakeAt(int degree) // getFirstAngle
+//{
+//  if (braking)
+//  {
+//    if (getJointAgl(po1) > degree * (1 - prop))
+//    {
+//        int a = map(getJointAgl(po1), 0, degree, 0, 255);
+//        setComOn(led1);      
+//    }
+//  }
+//}
 

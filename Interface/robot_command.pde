@@ -1,14 +1,14 @@
 // start the motor
 void startMotor()
 {
-  myPort.write("START");
+  myPort.write("N");
   action.setText("Motor: start");
 }
 
 // stop the motor
 void stopMotor()
 {  
-  myPort.write("STOP");
+  myPort.write("O");
     action.setText("Motor: stop");
 
 }
@@ -18,13 +18,13 @@ void setMotorSpeed(String speed)
 {
   if (speed == "High") 
   {
-    myPort.write("HIGH");
+    myPort.write("P");
   } else if (speed == "Medium") 
   {
-    myPort.write("MEDIUM");
+    myPort.write("Q");
   } else if (speed == "Low") 
   {
-    myPort.write("LOW");
+    myPort.write("R");
   }
   action.setText("Speed: " + speed);
 }
@@ -34,10 +34,10 @@ void setMotorDir (String dir)
 {
   if (dir == "Direction 0") 
   {  
-    myPort.write("DIR0");
+    myPort.write("S");
   } else if (dir == "Direction 1") 
   {
-    myPort.write("DIR1");
+    myPort.write("T");
   }
   action.setText("Direction: " + dir);
 }
@@ -65,7 +65,7 @@ void setComOn (String com)
     myPort.write("LED2ON");
   } else if (com == "led3")
   {
-    myPort.write("LED3ON");
+    myPort.write("K");
   }
   println(com + " ON");
   action.setText(com + " ON");
@@ -94,7 +94,7 @@ void setComOff (String com)
     myPort.write("LED2OFF");
   } else if (com == "led3")
   {
-    myPort.write("LED3OFF");
+    myPort.write("L");
   }
   println(com + " OFF");
   action.setText(com + " OFF");

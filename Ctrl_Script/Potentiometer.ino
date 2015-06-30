@@ -1,4 +1,4 @@
-// return the angle of a joint
+// return the angle ofa joint
 int getJointAgl(int po)
 {
   return map(analogRead(po), 0, 1023, 0, 360);
