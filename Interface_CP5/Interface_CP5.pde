@@ -17,7 +17,7 @@ void setup() {
   size(700, 400);
   smooth();
   cp5 = new ControlP5(this);
-
+  testPort();
   initPort();
   initUI();
 }

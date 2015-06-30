@@ -4,17 +4,20 @@
 // parse data
 
 // sending different commands to robot 
-Serial myPort;       
+Serial myPort;     
+Serial myPort2;
 
 void initPort()
 {
   myPort = new Serial(this, Serial.list()[2], 9600);
-//  myPort.bufferUntil('\n');
+  //myPort2 = new Serial(this, Serial.list()[7], 9600);
+  //myPort.bufferUntil('\n');
 }
 void serialEvent(Serial myPort) 
 {
   // start to read the data when it meets new line mark
   value = myPort.readStringUntil('\n');
+  print (value);
 }
 
 void testPort()

@@ -158,34 +158,34 @@ void serialResponse()
   {
     digitalWrite(led3, HIGH);
     startMotor();
-    setMotorSpeed(45);
+    setMotorSpeed(40);
 
   }
 
   if (serialData == '2')
   {
     digitalWrite(led3, HIGH);
-    setMotorSpeed(40);
+    setMotorSpeed(35);
   }
 
   if (serialData == '3')
-  {
-    digitalWrite(led3, HIGH);
-    setMotorSpeed(35);
-
-  }
-
-  if (serialData == '4')
   {
     digitalWrite(led3, HIGH);
     setMotorSpeed(30);
 
   }
 
-  if (serialData == '5')
+  if (serialData == '4')
   {
     digitalWrite(led3, HIGH);
     setMotorSpeed(25);
+
+  }
+
+  if (serialData == '5')
+  {
+    digitalWrite(led3, HIGH);
+    setMotorSpeed(20);
 
   }
 
@@ -198,7 +198,7 @@ void serialResponse()
   if (serialData == '7')
   {
     digitalWrite(led3, HIGH);
-    setMotorSpeed(8);
+    setMotorSpeed(10);
     
   }
 
