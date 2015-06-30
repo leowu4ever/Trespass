@@ -27,11 +27,14 @@ void controlEvent(ControlEvent theEvent) {
     }
   }
 
+
   if (theEvent.isFrom(light)) {
     if (light.getArrayValue()[0] == 0) {
       myColorBackground = 10;
+      setComOff("light");
     } else  if (light.getArrayValue()[0] == 1) {
       myColorBackground = 100;
+      setComOn("light");
     }
   }
   //TO DO 
@@ -103,6 +106,7 @@ void controlEvent(ControlEvent theEvent) {
       println("f3 on");
     }
   }
+
 
   if (theEvent.isFrom(speed)) {
     println("speed " + speed.getValue() );

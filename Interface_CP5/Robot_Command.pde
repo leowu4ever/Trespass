@@ -38,7 +38,10 @@ void setComOn (String com)
   } else if (com == "b3")
   {
     myPort.write('E');
-  } 
+  } else if (com == "light") 
+  {
+    myPort.write('G');
+  }
   println(com + " ON");
 }
 
@@ -54,6 +57,9 @@ void setComOff (String com)
   } else if (com == "b3")
   {
     myPort.write('F');
+  } else if (com == "light") 
+  {
+    myPort.write('H');
   }
   println(com + " OFF");
 }
