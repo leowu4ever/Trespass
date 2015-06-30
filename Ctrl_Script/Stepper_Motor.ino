@@ -4,11 +4,12 @@ void driveMotor(int delayTime)
 {
   if (!motorStop)                        // safety check
   {
-    digitalWrite(stp, HIGH);
-
-    delay(delayTime);
-    digitalWrite(stp, LOW);
-  }
+ //   if (b1Stop) {
+      digitalWrite(stp, HIGH);
+      delay(delayTime);
+      digitalWrite(stp, LOW);
+    }
+ // }
 }
 
 // start motor

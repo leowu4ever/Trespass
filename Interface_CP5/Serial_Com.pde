@@ -9,7 +9,7 @@ Serial myPort;
 void initPort()
 {
   myPort = new Serial(this, Serial.list()[2], 9600);
-  myPort.bufferUntil('\n');
+//  myPort.bufferUntil('\n');
 }
 void serialEvent(Serial myPort) 
 {
