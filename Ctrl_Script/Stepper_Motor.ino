@@ -1,15 +1,12 @@
-
 // run the motor one step
 void driveMotor(int delayTime)
 {
   if (!motorStop)                        // safety check
   {
- //   if (b1Stop) {
-      digitalWrite(stp, HIGH);
-      delay(delayTime);
-      digitalWrite(stp, LOW);
-    }
- // }
+    digitalWrite(stp, HIGH);
+    delay(delayTime);
+    digitalWrite(stp, LOW);
+  }
 }
 
 // start motor
@@ -45,17 +42,5 @@ void setMotorDir(int direction)
 void setMotorSpeed(int speed)
 {
   delayTime = speed;
-//  if (speed == HIGH_SPEED)
-//  {
-//    states[stp] = "3";
-//  } else if (speed == MEDIUM_SPEED)
-//  {
-//    states[stp] = "2";
-//
-//  }
-//  else if (speed == LOW_SPEED)
-//  {
-//    states[stp] = "1";
-//  }
 }
 

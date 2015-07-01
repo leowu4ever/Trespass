@@ -9,6 +9,7 @@ void initOSC()
   myRemoteLocation = new NetAddress("10.0.0.10", 54321);
 }
 
+// checking osc message and do serial write to trigger actions
 void oscEvent(OscMessage theOscMessage) 
 {  
   // get the first value as an integer

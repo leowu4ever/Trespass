@@ -17,16 +17,16 @@
 // digital pin assignment
 int stp = 7;                   // step pin of stepper motor
 int dir = 6;
-int c1 = 4;                    // clutch on base
+//int c1 = 4;                    // clutch on base
 int b1 = 9;                    // brake on base
 int b2 = 10;                    // brake on mid joint
 int b3 = 11;                    // brake on distal joint
-int pp1 = 8;                   // pressure pad 1
+//int pp1 = 8;                   // pressure pad 1
 //int pp2 = 9;                   // pressure pad 2
 //int pp3 = 10;                   // pressure pad 3
 int led1 = 3;                 // Light
-int led2 = 12;                 // LED on mid joint
-int led3 = 13;                 // LED on distal joint
+//int led2 = 12;                 // LED on mid joint
+//int led3 = 13;                 // LED on distal joint
 int po1 = A0;                  // potentiometer on base
 int po2 = A1;                  // potentiometer on mid joint
 int po3 = A2;                  // potentiometer on distal joint
@@ -66,7 +66,7 @@ void loop()
   //  sendStates();
   driveMotor(delayTime);
   serialResponse();
- // trackPatterns();
+  // trackPatterns();
 }
 
 // pin assignment
@@ -74,17 +74,17 @@ void pinAssign()
 {
   // set pressure pad pins as input
   //pinMode(pp1, INPUT);
-//  pinMode(pp2, INPUT);
- // pinMode(pp3, INPUT);
+  //  pinMode(pp2, INPUT);
+  // pinMode(pp3, INPUT);
   // set stepper motor, clutch, brake and led pins as output
   pinMode(stp, OUTPUT);
   pinMode(dir, OUTPUT);
-  pinMode(c1, OUTPUT);
+  // pinMode(c1, OUTPUT);
   pinMode(b1, OUTPUT);
   pinMode(b2, OUTPUT);
   pinMode(b3, OUTPUT);
   pinMode(led1, OUTPUT);
-//  pinMode(led2, OUTPUT);
-//  pinMode(led3, OUTPUT);
+  //  pinMode(led2, OUTPUT);
+  //  pinMode(led3, OUTPUT);
 }
 
