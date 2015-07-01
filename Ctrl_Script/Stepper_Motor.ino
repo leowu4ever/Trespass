@@ -45,17 +45,17 @@ void setMotorDir(int direction)
 void setMotorSpeed(int speed)
 {
   delayTime = speed;
-  if (speed == HIGH_SPEED)
-  {
-    states[stp] = "3";
-  } else if (speed == MEDIUM_SPEED)
-  {
-    states[stp] = "2";
-
-  }
-  else if (speed == LOW_SPEED)
-  {
-    states[stp] = "1";
-  }
+//  if (speed == HIGH_SPEED)
+//  {
+//    states[stp] = "3";
+//  } else if (speed == MEDIUM_SPEED)
+//  {
+//    states[stp] = "2";
+//
+//  }
+//  else if (speed == LOW_SPEED)
+//  {
+//    states[stp] = "1";
+//  }
 }
 

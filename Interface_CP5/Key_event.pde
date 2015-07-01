@@ -58,30 +58,6 @@ void keyPressed() {
     } else if (key=='4') {
       //  brakecheckbox.toggle(3);
       light.toggle(0);
-    } else if (key=='q') {
-      // clutchMotorCheckbox.toggle(0);
-      s2.toggle(0);
-    } else if (key=='w') {
-      // clutchMotorCheckbox.toggle(1);
-      s3.toggle(0);
-    } else if (key=='a') {
-      // clutchMotorCheckbox.toggle(1);
-      t2.toggle(0);
-    } else if (key=='s') {
-      // clutchMotorCheckbox.toggle(1);
-      t3.toggle(0);
-    } else if (key=='z') {
-      // clutchMotorCheckbox.toggle(1);
-      f2.toggle(0);
-    } else if (key=='x') {
-      // clutchMotorCheckbox.toggle(1);
-      f3.toggle(0);
-    } else if (key == '§') {
-      if (speed.getValue() != fav) {
-        speed.setValue(fav);
-        startMotor();
-        myPort.write(fav+48);
-      }
     } else {
       println("unused key");
     }

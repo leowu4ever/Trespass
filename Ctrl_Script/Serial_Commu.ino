@@ -16,8 +16,6 @@ void sendStates()
   //    }
   //    driveMotor(delayTime);
   //  }
-
-
 }
 
 void serialResponse()
@@ -104,6 +102,10 @@ void serialResponse()
     // NOT ONLY JUST STOP THE MOTOR
     // BRAKES
     stopMotor();
+    setComOn(b1);
+    setComOn(b2);
+    setComOn(b3);
+
   }
 
   // start motor
@@ -150,67 +152,52 @@ void serialResponse()
 
   if (serialData == '0')
   {
-    digitalWrite(led3, LOW);
     stopMotor();
   }
 
   if (serialData == '1')
   {
-    digitalWrite(led3, HIGH);
     startMotor();
     setMotorSpeed(40);
-
   }
 
   if (serialData == '2')
   {
-    digitalWrite(led3, HIGH);
     setMotorSpeed(35);
   }
 
   if (serialData == '3')
   {
-    digitalWrite(led3, HIGH);
     setMotorSpeed(30);
-
   }
 
   if (serialData == '4')
   {
-    digitalWrite(led3, HIGH);
     setMotorSpeed(25);
-
   }
 
   if (serialData == '5')
   {
-    digitalWrite(led3, HIGH);
     setMotorSpeed(20);
-
   }
 
   if (serialData == '6')
   {
-    digitalWrite(led3, HIGH);
     setMotorSpeed(15);
 
   }
   if (serialData == '7')
   {
-    digitalWrite(led3, HIGH);
     setMotorSpeed(10);
-    
   }
 
   if (serialData == '8')
   {
-    digitalWrite(led3, HIGH);
     setMotorSpeed(5);
 
   }
   if (serialData == '9')
   {
-    digitalWrite(led3, HIGH);
     setMotorSpeed(3);
   }
 }

@@ -33,7 +33,7 @@ void initUI ()
           .setColorLabel(color(255))
             .setSize(40, 40)
               .addItem("light", 0);
-              
+
   s2 = cp5.addCheckBox("s2")
     .setPosition(200, 60)
       .setColorForeground(color(120))

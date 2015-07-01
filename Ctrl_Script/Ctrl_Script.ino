@@ -54,8 +54,6 @@ int MEDIUM_SPEED = 8;
 int LOW_SPEED = 10;
 
 // for tracking patterns
-boolean s2ing, s3ing, t2ing, t3ing,  f2ing, f3ing;
-
 void setup()
 {
   Serial.begin(9600);
@@ -68,7 +66,7 @@ void loop()
   //  sendStates();
   driveMotor(delayTime);
   serialResponse();
-  trackPatterns();
+ // trackPatterns();
 }
 
 // pin assignment
