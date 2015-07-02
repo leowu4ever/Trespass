@@ -74,28 +74,7 @@ void serialResponse()
   {
     setComOff(led1);
   }
-  // LED2ON
-  if (serialData == 'I')
-  {
-    setComOn(led2);
-  }
 
-  // LED2OFF
-  if (serialData == 'J')
-  {
-    setComOff(led2);
-  }
-
-  // LED3ON
-  if (serialData == 'K')
-  {
-    setComOn(led3);
-  }
-  // LED3OFF
-  if (serialData == 'L')
-  {
-    setComOff(led3);
-  }
   // EMER STOP
   if (serialData == 'M')
   {
