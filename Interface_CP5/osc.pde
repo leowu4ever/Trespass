@@ -87,17 +87,33 @@ void oscEvent(OscMessage theOscMessage)
     myPort.write('F');
   }
 
-  // LIGHT 
+  // LIGHT OFF
   if (oscValue == 16) {
-    myPort.write('G');
-  }
-
-  if (oscValue == 17) {
     myPort.write('H');
   }
-
+  
+  // 25
+  if (oscValue == 17) {
+    myPort.write('I');
+  }
+  
+  // 50
+   if (oscValue == 18) {
+    myPort.write('J');
+  }
+  
+  // 75
+   if (oscValue == 19) {
+    myPort.write('K');
+  }
+  
+  // 100
+   if (oscValue == 20) {
+    myPort.write('G');
+  }
+  
   //STOP 
-  if (oscValue == 18) {
+  if (oscValue == 21) {
     myPort.write('M');
   }
 }

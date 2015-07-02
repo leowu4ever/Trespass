@@ -75,6 +75,24 @@ void serialResponse()
     setComOff(led1);
   }
 
+  // 25
+  if (serialData == 'I')
+  {
+    analogWrite(led1, 63);
+  }
+
+  // 50
+  if (serialData == 'J')
+  {
+    analogWrite(led1, 128);
+  }
+
+  // 75
+  if (serialData == 'K')
+  {
+    analogWrite(led1, 191);
+  }
+
   // EMER STOP
   if (serialData == 'M')
   {
